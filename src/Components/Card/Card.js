@@ -1,10 +1,22 @@
 import React from 'react';
 import './Card.css'
 
-const Card = () => {
+const Card = ({ gunData }) => {
+    // console.log(data);
+    const { img, name, bullet, capacity, action, price } = gunData;
     return (
-        <div>
-            <h3>This is Cart</h3>
+        <div className='card'>
+            <div className='image-container'>
+                <img className='gun-img' src={img} alt="" />
+            </div>
+            <h3>{name}</h3>
+            <p>Bullet Type: {bullet}</p>
+            <p>Capacity: {capacity}</p>
+            <p>Action: {action}</p>
+            <div className='add-to-cart'>
+                <button>Add to Card</button>
+                <h1>$ {price}</h1>
+            </div>
         </div>
     );
 };
